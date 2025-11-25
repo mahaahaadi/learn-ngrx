@@ -1,0 +1,7 @@
+[
+  { "id": 1, "name": "Laptop Pro 14", "category": "Electronics", "price": 1499, "stock": 12 },
+  { "id": 2, "name": "Noise-Canceling Headphones", "category": "Electronics", "price": 299, "stock": 35 },
+  { "id": 3, "name": "Standing Desk", "category": "Furniture", "price": 499, "stock": 8 },
+  { "id": 4, "name": "Ergonomic Chair", "category": "Furniture", "price": 349, "stock": 20 },
+  { "id": 5, "name": "Mechanical Keyboard", "category": "Accessories", "price": 129, "stock": 50 }
+]

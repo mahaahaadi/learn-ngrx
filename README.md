@@ -1,58 +1,57 @@
-# LearnNgrx
+# Learn NgRx Demo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.10.
+An interview-focused Angular demo showcasing core NgRx concepts:
 
-## Development server
+- Store setup with `provideStore`, `provideEffects`, `provideRouterStore`, DevTools
+- Feature state registered at route-level (lazy providers)
+- Entity adapter for normalized collections
+- Effects for HTTP fetching (mock API)
+- Router Store selectors mapping route params to state
+- SignalStore for local state with computed values
 
-To start a local development server, run:
+## Quick Start
 
-```bash
-ng serve
+Install dependencies and run the dev server:
+
+```powershell
+npm install
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open `http://localhost:4200/`:
 
-## Code scaffolding
+- Navigate to `/products` to see NgRx Store + Effects + Entity
+- Navigate to `/counter` to see Signals + SignalStore
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## What To Talk About In Interviews
 
-```bash
-ng generate component component-name
+- Why use NgRx: predictability, testability, tooling, time-travel
+- Feature state vs root state, lazy registration via route providers
+- Actions → Reducers → Selectors data flow; purity of reducers
+- Entity adapter: benefits for lists (ids/entities, efficient updates)
+- Effects: handling side effects, error handling, cancellation
+- Router Store: derive selections from URL params; keeping state in sync with navigation
+- Signals + SignalStore: local state, computed selectors, ergonomics vs global store
+
+## Build
+
+```powershell
+npm run build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Tests
 
-```bash
-ng generate --help
+```powershell
+npm test
 ```
 
-## Building
+## Files of Interest
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- `src/app/app.config.ts`: NgRx providers (store/effects/router/devtools)
+- `src/app/app.routes.ts`: Lazy routes; products feature NgRx registration
+- `src/app/features/products/*`: Actions, reducer (entity), selectors, effects, component
+- `src/app/features/counter/*`: SignalStore and counter component
+- `public/api/products.json`: Mock data consumed by effects
 
 ## Additional Resources
 
