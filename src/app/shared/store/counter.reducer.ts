@@ -21,12 +21,12 @@ const _counterReducer = createReducer(initialState,
     on(reset, (state) => {
         return {
             ...state,
-            counter: state.counter = 0
+            counter: 0
         }
     }) 
 
 )
 
 export function counterReducer(state: any, action: any) {
-
+  return _counterReducer(state, action);
 }
