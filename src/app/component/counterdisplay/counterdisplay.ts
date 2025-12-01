@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-counterdisplay',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './counterdisplay.html',
   styleUrl: './counterdisplay.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Counterdisplay implements OnInit {
-  counterDisplay!: number;
+export class Counterdisplay {
 
-  constructor(private store: Store<{counter: number}>) { }
-
-  ngOnInit(): void {
-    this.store.select('counter').subscribe( data => {
-        this.counterDisplay = data;
-    })  
-  }
+  private store = inject(Store);
+  counterDisplay = this.store.select((state: any) => state.counter.counter);
 }
