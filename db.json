@@ -1,0 +1,69 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop Pro 14",
+      "category": "Electronics",
+      "price": 1499,
+      "stock": 12
+    },
+    {
+      "id": "2",
+      "name": "Noise-Canceling Headphones",
+      "category": "Electronics",
+      "price": 299,
+      "stock": 35
+    },
+    {
+      "id": "3",
+      "name": "Standing Desk",
+      "category": "Furniture",
+      "price": 499,
+      "stock": 8
+    },
+    {
+      "id": "4",
+      "name": "Ergonomic Chair",
+      "category": "Furniture",
+      "price": 349,
+      "stock": 20
+    },
+    {
+      "id": "5",
+      "name": "Mechanical Keyboard",
+      "category": "Accessories",
+      "price": 129,
+      "stock": 50
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "productId": 1,
+      "quantity": 2,
+      "status": "delivered",
+      "createdAt": "2025-11-20T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "productId": 2,
+      "quantity": 1,
+      "status": "pending",
+      "createdAt": "2025-11-25T15:30:00Z"
+    },
+    {
+      "id": "867c",
+      "productId": 1,
+      "quantity": 1,
+      "status": "pending",
+      "createdAt": "2025-11-30T08:33:24.622Z"
+    },
+    {
+      "id": "e6cd",
+      "productId": 1,
+      "quantity": 1,
+      "status": "pending",
+      "createdAt": "2025-11-30T08:33:27.178Z"
+    }
+  ]
+}

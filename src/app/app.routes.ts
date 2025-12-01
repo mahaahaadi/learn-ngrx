@@ -18,9 +18,12 @@ export const routes: Routes = [
 		path: 'products',
 		loadComponent: () => import('./features/products/products.component').then(m => m.ProductsComponent),
 		providers: [
-			// Route-level feature registration; instantiated when route is active
 			provideState({ name: 'products', reducer: productsReducer }),
 			provideEffects([ProductsEffects]),
 		]
+	},
+	{
+		path: 'orders',
+		loadComponent: () => import('./features/orders/orders.component').then(m => m.OrdersComponent),
 	},
 ];

@@ -14,7 +14,7 @@ export class ProductsEffects {
     this.actions$.pipe(
       ofType(ProductsActions.load),
       switchMap(() =>
-        this.http.get<Product[]>('/api/products.json').pipe(
+        this.http.get<Product[]>('http://localhost:3000/products').pipe(
           map((products) => ProductsActions.loadSuccess({ products })),
           catchError((error) => of(ProductsActions.loadFailure({ error })))
         )
