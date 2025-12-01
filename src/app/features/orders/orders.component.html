@@ -1,0 +1,21 @@
+<section class="feature">
+  <h2>Orders (State Composition, Effects, Entity)</h2>
+  <div class="toolbar">
+    <button type="button" (click)="loadOrders()">Load Orders</button>
+    <button type="button" (click)="createOrder()" [disabled]="creating()">
+      {{ creating() ? 'Creating...' : 'Create Order' }}
+    </button>
+    <a href="/products">Products</a>
+  </div>
+
+  @if (loading()) { <p>Loading...</p> }
+  @if (error()) { <p class="error">Error: {{ error() }}</p> }
+
+  <ul class="list">
+    @for (order of orders(); track order.id) {
+      <li>
+        <strong>#{{ order.id }}</strong> - Product {{ order.productId }}, Qty: {{ order.quantity }}, Status: <span [class]="'status-' + order.status">{{ order.status }}</span>
+      </li>
+    }
+  </ul>
+</section>

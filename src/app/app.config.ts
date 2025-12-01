@@ -3,8 +3,10 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { provideEffects } from '@ngrx/effects';
 import { provideRouterStore } from '@ngrx/router-store';
-import { provideStore } from '@ngrx/store';
+import { provideStore, provideState } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { ordersReducer } from './features/orders/orders.reducer';
+import { OrdersEffects } from './features/orders/orders.effects';
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
@@ -17,7 +19,8 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideHttpClient(),
     provideStore(),
-    provideEffects(),
+    provideState({ name: 'orders', reducer: ordersReducer }),
+    provideEffects([OrdersEffects]),
     provideRouterStore(),
     provideStoreDevtools({ maxAge: 25, logOnly: false })
   ]
